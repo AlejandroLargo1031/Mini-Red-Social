@@ -4,8 +4,14 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiResponse<T> {
+
   private boolean success;
   private int status;
   private String message;
@@ -27,44 +33,4 @@ public class ApiResponse<T> {
     this.data = data;
   }
 
-  // Getters y Setters
-  public boolean isSuccess() {
-    return success;
-  }
-
-  public void setSuccess(boolean success) {
-    this.success = success;
-  }
-
-  public int getStatus() {
-    return status;
-  }
-
-  public void setStatus(int status) {
-    this.status = status;
-  }
-
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-  public String getToken() {
-    return token;
-  }
-
-  public void setToken(String token) {
-    this.token = token;
-  }
-
-  public List<T> getData() {
-    return data;
-  }
-
-  public void setData(List<T> data) {
-    this.data = data;
-  }
 }
