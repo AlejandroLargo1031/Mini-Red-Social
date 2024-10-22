@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-800 min-h-screen p-4">
+    <header class="w-full bg-sky-900 p-8 shadow-lg text-white">
+      <nav class="flex justify-between">
+        <h1 class="text-2xl font-bold">Post</h1>
+        <div class="flex gap-8">
+          <a href="/" class="text-orange-500 font-bold">Home</a>
+          <a href="/Perfil">Perfil</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container grid grid-cols-2 mt-8">
+      <section class="bg-sky-700 p-6 rounded-lg text-white w-4/5 mx-auto">
+        <h2 class="text-xl font-semibold mb-4">Add Post</h2>
+        <form id="postForm" class="flex flex-col gap-4">
+          <input
+            type="text"
+            id="author"
+            placeholder="Autor"
+            class="p-2 rounded-md"
+            required
+          />
+          <textarea
+            id="text"
+            placeholder="Texto (máx. 200 caracteres)"
+            maxlength="200"
+            class="p-2 rounded-md"
+            required
+          ></textarea>
+          <input
+            type="file"
+            id="image"
+            accept="image/*"
+            class="p-2 rounded-md"
+          />
+          <input type="date" id="date" class="p-2 rounded-md" required />
+          <button
+            type="submit"
+            class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md"
+          >
+            Publicar
+          </button>
+        </form>
+      </section>
+
+      <section class="mt-12">
+        <h2 class="text-white text-2xl mb-4 text-center">Post</h2>
+        <div id="postsContainer" class="grid gap-4">
+          
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
