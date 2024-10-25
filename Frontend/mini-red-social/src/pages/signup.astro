@@ -1,22 +1,30 @@
 ---
 import { Separator } from "@/components/ui/separator";
----
+import Layout from "@/layouts/Layout.astro";
+import { getSession } from "auth-astro/server";
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sign Up</title>
-  </head>
-  <body class="bg-slate-800 h-screen flex items-center justify-center">
+const session = await getSession(Astro.request);
+
+// if (session) return Astro.redirect("/");
+---
+<Layout title="Register - Snapverse">
+  <div class="bg-slate-800 h-screen flex items-center justify-center">
     <div class="w-96 bg-sky-900 p-8 rounded-xl shadow-lg">
       <!-- Encabezado -->
       <div class="flex justify-end gap-2 items-center mb-6">
-        <button class="bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-md">Sign In</button>
-        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md">Sing Up</button>
+        <button
+          class="bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-md"
+          >Sign In</button
+        >
+        <button
+          class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md"
+          >Sing Up</button
+        >
       </div>
 
-      <h2 class="text-white text-center text-2xl font-bold mb-6">Snap<span class="text-orange-500">Verse</span></h2>
+      <h2 class="text-white text-center text-2xl font-bold mb-6">
+        Snap<span class="text-orange-500">Verse</span>
+      </h2>
 
       <div class="mb-4">
         <label class="block text-white font-semibold mb-2">Name</label>
@@ -25,7 +33,7 @@ import { Separator } from "@/components/ui/separator";
           placeholder="Enter Name"
           class="w-full px-4 py-2 rounded-md bg-sky-900 text-white placeholder-gray-400 outline-none outline-transparent"
         />
-        <Separator/>
+        <Separator />
       </div>
 
       <div class="mb-4">
@@ -35,7 +43,7 @@ import { Separator } from "@/components/ui/separator";
           placeholder="Enter your Last name"
           class="w-full px-4 py-2 rounded-md bg-sky-900 text-white placeholder-gray-400 outline-none outline-transparent"
         />
-        <Separator/>
+        <Separator />
       </div>
 
       <div class="mb-4">
@@ -45,7 +53,7 @@ import { Separator } from "@/components/ui/separator";
           placeholder="Enter your Username"
           class="w-full px-4 py-2 rounded-md bg-sky-900 text-white placeholder-gray-400 outline-none outline-transparent"
         />
-        <Separator/>
+        <Separator />
       </div>
 
       <!-- Contraseña -->
@@ -56,7 +64,7 @@ import { Separator } from "@/components/ui/separator";
           placeholder="*********"
           class="w-full px-4 py-2 rounded-md bg-sky-900 text-white placeholder-gray-400 outline-none outline-transparent"
         />
-        <Separator/>
+        <Separator />
       </div>
 
       <!-- Checkbox -->
@@ -68,14 +76,18 @@ import { Separator } from "@/components/ui/separator";
         />
         <label for="terms" class="ml-2 text-white">
           By signing up you agree to
-          <a href="#" class="text-orange-500 font-bold hover:underline">Terms and conditions</a>
+          <a href="#" class="text-orange-500 font-bold hover:underline"
+            >Terms and conditions</a
+          >
         </label>
       </div>
 
       <!-- Botón de Registro -->
-      <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-bold">
+      <button
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-bold"
+      >
         Sign Up
       </button>
     </div>
-  </body>
-</html>
+  </div>
+</Layout>

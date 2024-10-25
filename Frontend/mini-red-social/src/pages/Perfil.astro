@@ -1,13 +1,12 @@
 ---
-import '@/styles/globals.css'
+import { getSession } from 'auth-astro/server'
+import Layout from '@/layouts/Layout.astro'
+const session = await getSession(Astro.request);
+
+// if (!session) return Astro.redirect("/signin");
 ---
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil de Usuario</title>
-  </head>
+
+<Layout title = "Perfil - Snapverse">
   <body class="bg-gray-800 min-h-screen text-white">
   
     <header class="bg-blue-900 p-6 shadow-lg">
@@ -62,4 +61,5 @@ import '@/styles/globals.css'
       </section>
     </main>
   </body>
-</html>
+
+</Layout>
